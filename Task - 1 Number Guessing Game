@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std ;
+
+int main() {
+
+  cout << "********************************\n" ;
+  cout << "***** NUMBER GUESSING GAME *****\n" ;
+  cout << "********************************\n\n\n" ;
+
+  int randomNum, guess, guesses = 8 ;
+  double betAmount ;
+
+  cout << "Enter the Bet Amount you wanna Risk : " ;
+  cin >> betAmount ;
+  cout << "\n\n" ;
+  
+  srand(time(NULL));
+
+    randomNum = rand() % 100 + 1 ;
+
+     cout << "Enter Your Guess between 1 & 100 : ";
+     cin >> guess ; 
+
+  for(int i = 0; i < guesses; i++){
+
+    if(guess >= 1 && guess <= 100){
+      
+      if(guess > randomNum){
+      
+          cout << "\nYour Guess is Higher than Expected\n" ;
+      
+      }
+
+      else if(guess < randomNum){
+      
+          cout << "\nYour Guess is Lower than Expected\n" ;
+
+      }
+
+      else{
+
+          cout << "\nYou Guessed the Correct Number\n" ;
+          break ;
+      
+      }
+    }
+
+    else{
+
+        cout << "Invalid Input\n" ;
+    }
+    
+        cout << "Try Again : \n" ;
+        cout << "Enter Your Guess between 1 & 100 : " ;
+        cin >> guess ;
+      
+  }
+  
+  if(guess != randomNum){
+    
+      cout << "You Lose Your Money\n" ;
+    
+  }
+
+  else{
+
+    betAmount = betAmount * 10 ;
+    cout << "You Won : "<< betAmount << " $ of Money\n" ;
+    
+  }
+
+  cout << "The Correct Number was : " << randomNum << endl; 
+  
+}

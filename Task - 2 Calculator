@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std ;
+
+int main() {
+
+  cout << "************************\n";
+  cout << "****** CALCULATOR ******\n";
+  cout << "************************\n\n\n";
+
+  int choice;
+  double num1, num2, sum, minus, multiply, divide;
+  
+  cout << "Choose one Of The Following Options : \n\n";
+  cout << "*______________________________________*\n";
+  cout << "| 1. Addition                          |\n";
+  cout << "| 2. Subtraction                       |\n";
+  cout << "| 3. Multiplication                    |\n";
+  cout << "| 4. Division                          |\n\n\n";
+  cin >> choice;
+
+  if(choice > 0 && choice < 5){
+    
+    cout << "Enter 1st Number : \n";
+    cin >> num1;
+    cout << "Enter 2nd Number : \n";
+    cin >> num2;
+  
+    switch(choice){
+
+      case 1:
+
+        sum = num1 + num2;
+        cout << "Addition of Two Numbers is : " << sum << endl;
+        break;
+    
+      case 2:
+      
+        minus = num1 - num2;
+        cout << "Subtraction of Two Numbers  is : " << minus << endl;
+        break;
+    
+      case 3:
+      
+        multiply = num1 * num2;
+        cout << "Multiplication of Two Numbers is : " << multiply << endl;
+        break;
+    
+      case 4:
+
+        divide = num1 / num2;
+        cout << "Division of Two Numbers is : " << divide << endl;
+        break;
+
+    }
+  }
+
+  else{
+
+    cout << "Invalid Input\n";
+    
+  }
+}
